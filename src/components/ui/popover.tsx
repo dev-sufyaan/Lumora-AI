@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from '@/components/event-calendar/utils';
+import { cn } from '@/functions/cn';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 
 import * as React from 'react';
