@@ -17,7 +17,7 @@ const Features = () => {
                         Interactive Learning <br /> Tools & Content
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        Turn passive video watching into an active, search-driven, practice-oriented learning journey with Lumora AI's interactive tools and outcome-focused courses.
+                        Turn passive video watching into an active, search-driven, practice-oriented learning journey with Lumora AI&apos;s interactive tools and outcome-focused courses.
                     </p>
                 </div>
             </Container>
@@ -73,7 +73,7 @@ const Features = () => {
                                     <div className="bento-card w-full relative items-center justify-center">
                                         <div className="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                             <p className="text-base text-muted-foreground text-justify [mask-image:radial-gradient(50%_50%_at_50%_50%,#BAB3FF_0%,rgba(186,179,255,0)_90.69%)]">
-                                                Consistency is the key. Small daily improvements lead to stunning results. Our platform helps you learn through practical, outcome-focused courses with step-by-step frameworks. Turn coding into a high-income skill with courses like 'How to Turn Coding into a One-Person Business in 2025'. Our AI-powered learning tools help you understand concepts better and track your progress. Practice questions reinforce your learning and identify areas that need review. The Notes Section allows you to save personalized insights for later reference.
+                                                Consistency is the key. Small daily improvements lead to stunning results. Our platform helps you learn through practical, outcome-focused courses with step-by-step frameworks. Turn coding into a high-income skill with courses like &apos;How to Turn Coding into a One-Person Business in 2025&apos;. Our AI-powered learning tools help you understand concepts better and track your progress. Practice questions reinforce your learning and identify areas that need review. The Notes Section allows you to save personalized insights for later reference.
                                             </p>
                                         </div>
                                         <div className="w-full h-16 relative">
