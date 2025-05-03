@@ -3,11 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { CalendarIcon, CheckIcon, EyeIcon, TrashIcon, LockIcon, UnlockIcon } from "lucide-react";
+import { v4 as uuidv4 } from 'uuid';
 
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Container from "../global/container";
-import { SectionBadge } from "../ui/section-bade";
+import { SectionBadge } from "../ui/section-bade"; 
 import { FADE_IN_VARIANTS } from "@/constants";
 import { toast } from "sonner";
 import { 
@@ -19,17 +20,13 @@ import {
 } from "../ui/select";
 import LoadingIcon from "../ui/loading-icon";
 
-// Define appointment type
-interface Appointment {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  date: string;
-  time: string;
-  topic: string;
-  createdAt: string;
-}
+// Import appointment service
+import { 
+  getAllAppointments, 
+  createAppointment, 
+  deleteAppointment,
+  Appointment 
+} from "@/services/appointmentService";
 
 const ADMIN_PASSWORD = "admin123";
 
@@ -46,12 +43,13 @@ const AppointmentBooking = () => {
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [adminPassword, setAdminPassword] = useState("");
   const [appointments, setAppointments] = useState<Appointment[]>([]);
+  const [isLoadingAppointments, setIsLoadingAppointments] = useState(false);
 
-  // Load appointments from localStorage on component mount
+  // Load appointments from Supabase on component mount and when admin status changes
   useEffect(() => {
-    const storedAppointments = localStorage.getItem('appointments');
-    if (storedAppointments) {
-      setAppointments(JSON.parse(storedAppointments));
+    // Only fetch appointments when admin view is active and we're in the browser
+    if (isAdmin && typeof window !== 'undefined') {
+      fetchAppointments();
     }
     
     // Check if admin view is enabled with keyboard shortcut
@@ -62,9 +60,26 @@ const AppointmentBooking = () => {
       }
     };
     
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+    // Only add event listeners in browser environment
+    if (typeof window !== 'undefined') {
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [isAdmin]);
+
+  // Fetch appointments from Supabase
+  const fetchAppointments = async () => {
+    try {
+      setIsLoadingAppointments(true);
+      const data = await getAllAppointments();
+      setAppointments(data);
+    } catch (error) {
+      console.error('Error fetching appointments:', error);
+      toast.error('Failed to load appointments');
+    } finally {
+      setIsLoadingAppointments(false);
+    }
+  };
 
   const handleAdminLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -89,31 +104,62 @@ const AppointmentBooking = () => {
 
     setIsLoading(true);
     
-    // Create new appointment object
-    const newAppointment: Appointment = {
-      id: Date.now().toString(),
-      name,
-      email,
-      phone,
-      date,
-      time,
-      topic,
-      createdAt: new Date().toISOString()
-    };
-    
-    // Update appointments list
-    const updatedAppointments = [...appointments, newAppointment];
-    setAppointments(updatedAppointments);
-    
-    // Save to localStorage
-    localStorage.setItem('appointments', JSON.stringify(updatedAppointments));
-    
-    // Complete the booking process
-    setTimeout(() => {
+    try {
+      // Generate a simple UUID that's compatible with Supabase
+      const generateSimpleId = () => {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          const r = Math.random() * 16 | 0;
+          const v = c === 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+        });
+      };
+
+      // Create new appointment object with a simple ID format
+      const newAppointment = {
+        id: generateSimpleId(),
+        name,
+        email,
+        phone,
+        date,
+        time,
+        topic,
+        created_at: new Date().toISOString()
+      };
+      
+      console.log('Attempting to create appointment:', newAppointment);
+      
+      // Save to Supabase
+      await createAppointment(newAppointment);
+      
+      // Complete the booking process
       setIsLoading(false);
       setIsSubmitted(true);
       toast.success("Appointment booked successfully!");
-    }, 1000);
+    } catch (error: any) {
+      console.error('Detailed booking error:', {
+        message: error?.message,
+        details: error?.details,
+        code: error?.code,
+        hint: error?.hint
+      });
+      
+      // Show a more helpful error message based on error type
+      if (error?.code === '42P01') {
+        toast.error('Database setup required. Please contact support.');
+      } else if (error?.code === 'PGRST301') {
+        toast.error('Database connection issue. Please try again later.');
+      } else if (error?.message?.includes('fetch')) {
+        toast.error('Network connection issue. Please check your internet connection.');
+      } else if (error?.code === '23502') {
+        toast.error('Missing required fields. Please fill in all fields.');
+      } else if (error?.code === '22P02') {
+        toast.error('Invalid data format. Please try again.');
+      } else {
+        toast.error(`Failed to book appointment: ${error?.message || 'Unknown error'}`); 
+      }
+      
+      setIsLoading(false);
+    }
   };
   
   const handleReset = () => {
@@ -126,11 +172,16 @@ const AppointmentBooking = () => {
     setIsSubmitted(false);
   };
   
-  const deleteAppointment = (id: string) => {
-    const filteredAppointments = appointments.filter(app => app.id !== id);
-    setAppointments(filteredAppointments);
-    localStorage.setItem('appointments', JSON.stringify(filteredAppointments));
-    toast.success("Appointment deleted");
+  const handleDeleteAppointment = async (id: string) => {
+    try {
+      await deleteAppointment(id);
+      // Refresh the appointments list
+      fetchAppointments();
+      toast.success("Appointment deleted");
+    } catch (error) {
+      console.error('Error deleting appointment:', error);
+      toast.error('Failed to delete appointment');
+    }
   };
   
   // Format the date for display
@@ -262,7 +313,12 @@ const AppointmentBooking = () => {
               </Button>
             </div>
             
-            {appointments.length === 0 ? (
+            {isLoadingAppointments ? (
+              <div className="flex justify-center items-center py-12">
+                <LoadingIcon size="lg" />
+                <span className="ml-2">Loading appointments...</span>
+              </div>
+            ) : appointments.length === 0 ? (
               <p className="text-center text-muted-foreground py-8">No appointments booked yet.</p>
             ) : (
               <div className="overflow-x-auto">
@@ -291,7 +347,7 @@ const AppointmentBooking = () => {
                           <Button 
                             variant="ghost" 
                             size="sm"
-                            onClick={() => deleteAppointment(appointment.id)}
+                            onClick={() => handleDeleteAppointment(appointment.id)}
                             className="text-destructive hover:text-destructive/80 h-8 w-8 p-0"
                           >
                             <TrashIcon className="h-4 w-4" />
@@ -486,4 +542,4 @@ const AppointmentBooking = () => {
   );
 };
 
-export default AppointmentBooking; 
+export default AppointmentBooking;
