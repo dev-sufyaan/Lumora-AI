@@ -2,10 +2,17 @@
 // Run with: node src/scripts/create-supabase-table.js
 
 const { createClient } = require('@supabase/supabase-js');
+require('dotenv').config({ path: '.env.local' });
 
-// Use environment variables or hardcoded values for this script
-const supabaseUrl = 'https://yfhbwbwrktgfpczmqoo.supabase.co';
-const supabaseServiceKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlmaGJ3Yndya3RnZnBjemZtcW9vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NjI4MTYxOCwiZXhwIjoyMDYxODU3NjE4fQ.GQjMBuddwI2rsogFGF6SuCop8QYjsrPLdwYvFLyGc7s';
+// Use environment variables instead of hardcoded credentials
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl || !supabaseServiceKey) {
+  console.error('Error: Missing Supabase credentials in environment variables.');
+  console.error('Make sure NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are set in .env.local');
+  process.exit(1);
+}
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 

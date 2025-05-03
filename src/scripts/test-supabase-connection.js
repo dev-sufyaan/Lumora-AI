@@ -2,10 +2,17 @@
 // Run with: node src/scripts/test-supabase-connection.js
 
 const { createClient } = require('@supabase/supabase-js');
+require('dotenv').config({ path: '.env.local' });
 
-// Use the same credentials as in your application
-const supabaseUrl = 'https://yfhbwbwrktgfpczmqoo.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlmaGJ3Yndya3RnZnBjemZtcW9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYyODE2MTgsImV4cCI6MjA2MTg1NzYxOH0.qXEWf3hE9Vfyaq-acDMMWpOoqE7HQqqBnaEjcCZuNqM';
+// Use environment variables instead of hardcoded credentials
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('Error: Missing Supabase credentials in environment variables.');
+  console.error('Make sure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set in .env.local');
+  process.exit(1);
+}
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
