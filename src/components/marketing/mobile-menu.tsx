@@ -4,9 +4,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn, scrollToSection } from "@/functions";
 import { useClickOutside } from "@/hooks";
 import { motion } from "framer-motion";
-import { Box, CalendarClock, Captions, CircleHelp, CopyCheck, FileText, Gem, Home, Layers3, LineChart, Newspaper, UserCog, Waypoints } from "lucide-react";
+import { Box, CalendarClock, Captions, CircleHelp, CopyCheck, FileText, Gem, Home, Layers3, LineChart, Newspaper, UserCog, Waypoints, CalendarIcon, BarChart2 } from "lucide-react";
 import Link from "next/link";
 import React from 'react';
+import { Button } from "../ui/button";
 
 interface Props {
     isOpen: boolean;
@@ -20,6 +21,11 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
     const variants = {
         open: { opacity: 1, y: 20 },
         closed: { opacity: 0, y: 0 },
+    };
+
+    const handleBookAppointment = () => {
+        scrollToSection('book-appointment');
+        setIsOpen(false);
     };
 
     return (
@@ -66,6 +72,17 @@ const MobileMenu = ({ isOpen, setIsOpen }: Props) => {
                             Perks
                         </div>
                     </li>
+                    <div className="w-full pt-2 mt-2 border-t border-border/30">
+                        <Button 
+                            onClick={handleBookAppointment}
+                            className="w-full justify-start"
+                            variant="default"
+                            size="lg"
+                        >
+                            <CalendarIcon className="w-4 h-4 mr-2" />
+                            Book Appointment
+                        </Button>
+                    </div>
                 </ul>
             </motion.div>
         </div>

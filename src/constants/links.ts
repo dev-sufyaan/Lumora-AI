@@ -44,22 +44,4 @@ export const SIDEBAR_LINKS: Link[] = [
     },
 ];
 
-export const FOOTER_LINKS = [
-    {
-        title: "Resources",
-        links: [
-            { name: "Success Stories", href: "/blog" },
-            { name: "FAQ", href: "/help-center" },
-            { name: "Student Community", href: "/community" },
-            { name: "Learning Guides", href: "/guides" },
-        ],
-    },
-    {
-        title: "Legal",
-        links: [
-            { name: "Privacy Policy", href: "/privacy" },
-            { name: "Terms of Service", href: "/terms" },
-            { name: "Refund Policy", href: "/refund" },
-        ],
-    },
-];
+export const FOOTER_LINKS = [];

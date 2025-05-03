@@ -1,4 +1,4 @@
-import { Background, /* Companies, Connect, Features, */ Container, CTA, Hero, Perks, /* Pricing, Reviews, */ Wrapper } from "@/components";
+import { Background, /* Companies, Connect, Features, */ Container, CTA, Hero, Perks, AppointmentBooking, /* Pricing, Reviews, */ Wrapper } from "@/components";
 import { Spotlight } from "@/components/ui/spotlight";
 
 const HomePage = () => {
@@ -24,6 +24,7 @@ const HomePage = () => {
                 <Features />
                 */}
                 <Perks />
+                <AppointmentBooking />
                 {/* Pricing component commented out
                 <Pricing />
                 */}

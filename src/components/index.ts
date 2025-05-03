@@ -14,6 +14,7 @@ import Companies from "./marketing/companies";
 import Features from "./marketing/features";
 import Connect from "./marketing/connect";
 import Perks from "./marketing/perks";
+import AppointmentBooking from "./marketing/appointment-booking";
 import Pricing from "./marketing/pricing";
 import Reviews from "./marketing/reviews";
 import CTA from "./marketing/cta";
@@ -31,6 +32,7 @@ export {
     Features,
     Connect,
     Perks,
+    AppointmentBooking,
     Pricing,
     Reviews,
     CTA,

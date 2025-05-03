@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/functions";
-import { ArrowRightIcon, XIcon } from "lucide-react";
+import { cn, scrollToSection } from "@/functions";
+import { ArrowRightIcon, CalendarIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from 'react';
 import Icons from "../global/icons";
@@ -9,6 +9,7 @@ import Wrapper from "../global/wrapper";
 import { Button } from "../ui/button";
 import Menu from "./menu";
 import MobileMenu from "./mobile-menu";
+import { satoshi2 } from "@/constants/fonts";
 
 const Navbar = () => {
     // Simulate user state without Clerk
@@ -28,6 +29,9 @@ const Navbar = () => {
         };
     }, [isOpen]);
 
+    const handleBookAppointment = () => {
+        scrollToSection('book-appointment');
+    };
 
     return (
         <div className="relative w-full h-full">
@@ -39,17 +43,39 @@ const Navbar = () => {
                     isOpen ? "h-[calc(100%-24px)]" : "h-12"
                 )}
             >
-                <Wrapper className="backdrop-blur-lg rounded-xl lg:rounded-2xl border border-[rgba(124,124,124,0.2)] px- md:px-2 flex items-center justify-start">
+                <Wrapper className="backdrop-blur-lg rounded-xl lg:rounded-2xl border border-[rgba(124,124,124,0.2)] px-2 md:px-4 flex items-center justify-start">
                     <div className="flex items-center justify-between w-full sticky mt-[7px] lg:mt-auto mb-auto inset-x-0">
-                        <div className="flex items-center flex-1 lg:flex-none pl-1">
+                        <div className="flex items-center flex-1 pl-1">
                             <Link href="/" className="text-lg font-semibold text-foreground flex items-center">
-                                <span className="font-medium">Lumora AI</span>
+                                <div className={cn("flex items-center", satoshi2.className)}>
+                                    <span className="font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/70">Lumora</span>
+                                    <span className="font-medium tracking-wide ml-0.5 text-primary">AI</span>
+                                </div>
                             </Link>
-                            <div className="items-center hidden ml-4 lg:flex">
+                            <div className="items-center hidden ml-6 lg:flex">
                                 <Menu />
                             </div>
                         </div>
                         <div className="items-center flex gap-2 lg:gap-4">
+                            <Button
+                                onClick={handleBookAppointment}
+                                size="sm"
+                                className="hidden sm:flex items-center"
+                                variant="default"
+                            >
+                                <CalendarIcon className="w-4 h-4 mr-1.5" />
+                                Book Appointment
+                            </Button>
+                            
+                            <Button
+                                onClick={handleBookAppointment}
+                                size="sm"
+                                className="sm:hidden flex items-center"
+                                variant="default"
+                            >
+                                <CalendarIcon className="w-4 h-4" />
+                            </Button>
+                            
                             <Button
                                 size="icon"
                                 variant="ghost"
