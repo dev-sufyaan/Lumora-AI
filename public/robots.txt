@@ -1,0 +1,12 @@
+# Allow all web crawlers to access all content
+User-agent: *
+Allow: /
+
+# Disallow access to API routes
+Disallow: /api/
+
+# Disallow access to auth routes
+Disallow: /auth/
+
+# Sitemap location
+Sitemap: https://lumoraai.in/sitemap.xml 

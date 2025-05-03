@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node src/scripts/ping-search-engines.js",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate"
