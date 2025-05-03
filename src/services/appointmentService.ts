@@ -30,43 +30,30 @@ export async function getAllAppointments(): Promise<Appointment[]> {
  * Create a new appointment in the database
  */
 export async function createAppointment(appointment: AppointmentInsert): Promise<Appointment> {
-  // Use the service client for elevated privileges
-  const serviceClient = createServiceClient();
-
-  // Ensure required fields are present (basic validation)
-  if (!appointment.name || !appointment.email || !appointment.phone || !appointment.date || !appointment.time || !appointment.topic) {
-    console.error('Missing required appointment fields:', appointment);
-    throw new Error('Missing required fields for appointment creation.');
-  }
-
-  // Prepare data for insertion - assuming AppointmentInsert matches table structure
-  // If 'id' needs to be generated client-side, ensure it's done before this point.
-  // Supabase client might handle UUID generation if column default is set, but let's be explicit if needed.
-  const appointmentData = {
-    ...appointment,
-    // Generate UUID if not provided and DB doesn't auto-generate
-    // id: appointment.id || uuidv4(), // Example if using uuid library
-  };
-
+  // Instead of directly using the service client, make a POST request to our API
   try {
-    const { data, error } = await serviceClient
-      .from('appointments')
-      .insert(appointmentData)
-      .select()
-      .single();
-
-    if (error) {
-      // Log detailed error information
-      console.error('Error creating appointment:', {
-        message: error.message,
-        details: error.details,
-        hint: error.hint,
-        code: error.code
-      });
-      throw error;
+    // Ensure required fields are present (basic validation)
+    if (!appointment.name || !appointment.email || !appointment.phone || !appointment.date || !appointment.time || !appointment.topic) {
+      console.error('Missing required appointment fields:', appointment);
+      throw new Error('Missing required fields for appointment creation.');
     }
 
-    return data;
+    // Make a POST request to our API endpoint
+    const response = await fetch('/api/appointments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(appointment),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Error creating appointment:', errorData);
+      throw new Error(errorData.message || 'Failed to create appointment');
+    }
+
+    return await response.json();
   } catch (error: any) {
     // Provide more detailed error information
     console.error('Error in createAppointment:', {
