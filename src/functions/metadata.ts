@@ -16,8 +16,11 @@ interface MetadataProps {
     modifiedTime?: string;
 }
 
+// Ensure we have a fallback for the app name if the environment variable is not set
+const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || "Lumora AI";
+
 export const generateMetadata = ({
-    title = `${process.env.NEXT_PUBLIC_APP_NAME} - Interactive Video Learning Platform`,
+    title = `${APP_NAME} - Interactive Video Learning Platform`,
     description = "Transform passive video watching into active learning with AI-powered tools. Search-driven, practice-oriented learning journey with personalized assistance and outcome-focused courses",
     image = "/thumbnail.png",
     icons = [
@@ -43,7 +46,7 @@ export const generateMetadata = ({
         "video-based learning",
         "personalized education"
     ],
-    author = process.env.NEXT_PUBLIC_AUTHOR_NAME,
+    author = process.env.NEXT_PUBLIC_AUTHOR_NAME || "Lumora Team",
     twitterHandle = "@yourtwitterhandle",
     type = "website",
     locale = "en_US",
@@ -57,14 +60,14 @@ export const generateMetadata = ({
     return {
         metadataBase,
         title: {
-            template: `%s | ${process.env.NEXT_PUBLIC_APP_NAME}`,
+            template: `%s | ${APP_NAME}`,
             default: title
         },
         description,
         keywords,
         authors: [{ name: author }],
         creator: author,
-        publisher: process.env.NEXT_PUBLIC_APP_NAME,
+        publisher: APP_NAME,
         formatDetection: {
             email: false,
             address: false,
@@ -75,7 +78,7 @@ export const generateMetadata = ({
         // OpenGraph
         openGraph: {
             type,
-            siteName: process.env.NEXT_PUBLIC_APP_NAME,
+            siteName: APP_NAME,
             title,
             description,
             ...(imageUrl && {
