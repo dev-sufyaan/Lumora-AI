@@ -69,14 +69,15 @@ export async function createAppointment(appointment: AppointmentInsert): Promise
  */
 export async function deleteAppointment(id: string): Promise<void> {
   try {
-    const { error } = await supabase
-      .from('appointments')
-      .delete()
-      .eq('id', id);
+    // Use API route instead of direct Supabase access for better security
+    const response = await fetch(`/api/appointments/${id}`, {
+      method: 'DELETE',
+    });
 
-    if (error) {
-      console.error('Error deleting appointment:', error);
-      throw error;
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Error deleting appointment:', errorData);
+      throw new Error(errorData.error || 'Failed to delete appointment');
     }
   } catch (error) {
     console.error('Error in deleteAppointment:', error);
@@ -89,23 +90,61 @@ export async function deleteAppointment(id: string): Promise<void> {
  */
 export async function getAppointmentById(id: string): Promise<Appointment | null> {
   try {
-    const { data, error } = await supabase
-      .from('appointments')
-      .select('*')
-      .eq('id', id)
-      .single();
+    // Use API route instead of direct Supabase access for better security
+    const response = await fetch(`/api/appointments/${id}`);
 
-    if (error) {
-      if (error.code === 'PGRST116') { // Record not found
+    if (!response.ok) {
+      if (response.status === 404) {
         return null;
       }
-      console.error('Error fetching appointment:', error);
-      throw error;
+      const errorData = await response.json();
+      console.error('Error fetching appointment:', errorData);
+      throw new Error(errorData.error || 'Failed to fetch appointment');
     }
 
-    return data;
+    return await response.json();
   } catch (error) {
     console.error('Error in getAppointmentById:', error);
     return null;
+  }
+}
+
+/**
+ * Update appointment status
+ */
+export async function updateAppointmentStatus(id: string, status: 'pending' | 'confirmed' | 'closed'): Promise<Appointment> {
+  try {
+    // Validate status
+    if (!['pending', 'confirmed', 'closed'].includes(status)) {
+      throw new Error('Invalid status. Must be one of: pending, confirmed, closed');
+    }
+
+    // Use API route instead of direct Supabase access for better security
+    const response = await fetch(`/api/appointments/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ status }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      
+      // Check for specific database schema errors
+      if (errorData.error?.includes('status') || errorData.error?.includes('column') || 
+          errorData.error?.code === '42703') {
+        // This is likely a schema issue - recommend running the schema update
+        throw new Error('Database schema error: status column may be missing. Try using the "Verify Database Schema" button.');
+      }
+      
+      console.error('Error updating appointment status:', errorData);
+      throw new Error(errorData.error || 'Failed to update appointment status');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error in updateAppointmentStatus:', error);
+    throw error;
   }
 }

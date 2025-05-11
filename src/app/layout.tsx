@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "./scroll-fix.css";
 import { cn, generateMetadata } from "@/functions";
 import { inter, satoshi } from "@/constants";
 import { Toaster } from "@/components/ui/sonner";

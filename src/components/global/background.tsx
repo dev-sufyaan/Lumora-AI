@@ -6,7 +6,7 @@ interface Props {
 
 const Background = ({ children }: Props) => {
     return (
-        <main id='background' className="flex-none min-h-scree -z-10">
+        <main id='background' className="flex-none min-h-screen relative isolate">
 
             {/* <div className="absolute h-full inset-0 bg-dot-foreground/[0.2] hidden lg:flex"></div> */}
 

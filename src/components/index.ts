@@ -19,6 +19,11 @@ import Pricing from "./marketing/pricing";
 import Reviews from "./marketing/reviews";
 import CTA from "./marketing/cta";
 import Footer from "./marketing/footer";
+import NoCureNoPay from "./marketing/no-cure-no-pay";
+import SocialProof from "./marketing/social-proof";
+import ValueProposition from "./marketing/value-proposition";
+import FAQ from "./marketing/faq";
+import FreeDemo from "./marketing/free-demo-cta";
 
 export {
     Icons,
@@ -40,4 +45,9 @@ export {
     SignInForm,
     SignUpForm,
     Providers,
+    NoCureNoPay,
+    SocialProof,
+    ValueProposition,
+    FAQ,
+    FreeDemo,
 };

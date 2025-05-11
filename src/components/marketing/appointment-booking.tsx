@@ -192,10 +192,10 @@ const AppointmentBooking = () => {
   // Get topic label from value
   const getTopicLabel = (value: string) => {
     const topics = {
-      'product-demo': 'Product Demo',
-      'pricing': 'Pricing & Plans',
-      'integration': 'Integration Options',
-      'custom': 'Custom Solution'
+      'product-demo': 'Platform Demo',
+      'pricing': 'Pricing For Universities',
+      'integration': 'LMS Integration Options',
+      'custom': 'Content Creator Solutions'
     };
     return topics[value as keyof typeof topics] || value;
   };
@@ -214,29 +214,23 @@ const AppointmentBooking = () => {
     return times[value as keyof typeof times] || value;
   };
 
+  // Handle WhatsApp contact
+  const handleWhatsAppContact = () => {
+    window.open('https://wa.me/919318441197', '_blank');
+  };
+
   return (
-    <div id="book-appointment" className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24 w-full bg-accent/5">
+    <div id="book-appointment" className="py-16 md:py-24 lg:py-32 w-full relative">
       <Container>
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-          <SectionBadge title="Schedule" />
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-            Book your consultation
+        <motion.div variants={FADE_IN_VARIANTS} className="flex flex-col items-center text-center">
+          <SectionBadge title="Schedule a Demo" />
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium mt-6">
+            Book your free consultation
           </h2>
-          <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-            Schedule a free consultation with our experts to discover how Lumora can transform your learning experience
+          <p className="text-accent-foreground/60 max-w-md mx-auto mt-4">
+            Schedule a personalized demo to see how Lumora AI can transform your university's LMS or enhance your educational content.
           </p>
-          <div className="mt-4">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              onClick={() => setShowAdminLogin(true)}
-              className="text-xs text-muted-foreground/70 hover:text-muted-foreground"
-            >
-              <LockIcon className="h-3 w-3 mr-1" />
-              Admin
-            </Button>
-          </div>
-        </div>
+        </motion.div>
       </Container>
       
       {/* Admin Login Modal */}
@@ -426,10 +420,10 @@ const AppointmentBooking = () => {
                     <SelectValue placeholder="Select a topic" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="product-demo">Product Demo</SelectItem>
-                    <SelectItem value="pricing">Pricing & Plans</SelectItem>
-                    <SelectItem value="integration">Integration Options</SelectItem>
-                    <SelectItem value="custom">Custom Solution</SelectItem>
+                    <SelectItem value="product-demo">Platform Demo</SelectItem>
+                    <SelectItem value="pricing">Pricing For Universities</SelectItem>
+                    <SelectItem value="integration">LMS Integration Options</SelectItem>
+                    <SelectItem value="custom">Content Creator Solutions</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -503,7 +497,7 @@ const AppointmentBooking = () => {
             </div>
             <h3 className="mt-6 text-xl font-medium">Appointment Confirmed</h3>
             <p className="mt-2 text-muted-foreground">
-              Thank you for booking a consultation with us. We have sent a confirmation email with all the details.
+              Thank you for booking a consultation. Our team will contact you to discuss how we can enhance your educational platform.
             </p>
             <div className="mt-6 space-y-2">
               <div className="bg-accent/10 rounded-md p-4 text-left max-w-md mx-auto">
@@ -537,6 +531,28 @@ const AppointmentBooking = () => {
             </div>
           </motion.div>
         )}
+
+        {/* Add WhatsApp contact option after the form */}
+        <div className="mt-8 flex flex-col items-center justify-center">
+          <p className="text-muted-foreground mb-2">Prefer to chat directly?</p>
+          <Button 
+            variant="outline" 
+            onClick={handleWhatsAppContact}
+            className="flex items-center gap-2 mx-auto"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="currentColor" 
+              className="text-green-500"
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+            </svg>
+            Contact via WhatsApp
+          </Button>
+        </div>
       </Container>
     </div>
   );

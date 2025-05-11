@@ -19,6 +19,7 @@ export interface Database {
           time: string
           topic: string
           created_at: string
+          status?: string
         }
         Insert: {
           id?: string
@@ -29,6 +30,7 @@ export interface Database {
           time: string
           topic: string
           created_at?: string
+          status?: string
         }
         Update: {
           id?: string
@@ -39,6 +41,7 @@ export interface Database {
           time?: string
           topic?: string
           created_at?: string
+          status?: string
         }
       }
     }

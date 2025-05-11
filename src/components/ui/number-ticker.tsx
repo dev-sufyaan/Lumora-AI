@@ -23,13 +23,19 @@ export default function NumberTicker({
         // stiffness: 80,
         bounce: 0.15,
     });
-    const isInView = useInView(ref, { once: true, margin: "0px" });
+    const isInView = useInView(ref, { once: true, margin: "0px", amount: "some" });
 
     useEffect(() => {
-        isInView &&
-            setTimeout(() => {
-                motionValue.set(direction === "down" ? 0 : value);
-            }, delay * 500);
+        if (isInView) {
+            // Use requestAnimationFrame to avoid blocking the main thread during scroll
+            const animationId = requestAnimationFrame(() => {
+                setTimeout(() => {
+                    motionValue.set(direction === "down" ? 0 : value);
+                }, delay * 500);
+            });
+            
+            return () => cancelAnimationFrame(animationId);
+        }
     }, [motionValue, isInView, delay, value, direction]);
 
     useEffect(

@@ -2,7 +2,7 @@
 
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { scrollToSection } from "@/functions";
-import { CalendarRangeIcon, CircleHelp, HashIcon, Newspaper, UsersIcon, BarChart2, Layers3 } from 'lucide-react';
+import { CalendarRangeIcon, CircleHelp, HashIcon, Newspaper, UsersIcon, BarChart2, Layers3, Heart, Gift, Award, CalendarIcon, Phone, MessageSquareWarning } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import Icons from "../global/icons";
@@ -28,10 +28,50 @@ const Menu = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <div 
+                        onClick={() => scrollToSection('no-cure-no-pay')} 
+                        className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
+                    >
+                        Risk-Free
+                    </div>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <div 
+                        onClick={() => scrollToSection('value-proposition')} 
+                        className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
+                    >
+                        Transform Learning
+                    </div>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <div 
                         onClick={() => scrollToSection('perks')} 
                         className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
                     >
-                        Perks
+                        Benefits
+                    </div>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <div 
+                        onClick={() => scrollToSection('social-proof')} 
+                        className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
+                    >
+                        Testimonials
+                    </div>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <div 
+                        onClick={() => scrollToSection('book-appointment')} 
+                        className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
+                    >
+                        Consultation
+                    </div>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <div 
+                        onClick={() => scrollToSection('faq')} 
+                        className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
+                    >
+                        FAQ
                     </div>
                 </NavigationMenuItem>
             </NavigationMenuList>

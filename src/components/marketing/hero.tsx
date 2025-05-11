@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRightIcon, Volume2, VolumeX } from "lucide-react";
+import { ArrowRightIcon, Volume2, VolumeX, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { BlurText } from "../ui/blur-text";
 import { Button } from "../ui/button";
@@ -8,9 +8,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Container from "../global/container";
 import { useState } from "react";
+import { scrollToSection } from "@/functions";
 
 const Hero = () => {
     const [isMuted, setIsMuted] = useState(true);
+    
+    const handleTryRiskFree = () => {
+        scrollToSection('book-appointment');
+    };
+    
     return (
         <div id="hero" className="flex flex-col items-center text-center w-full max-w-5xl my-24 mx-auto z-40 relative">
             <Container delay={0.0}>
@@ -23,9 +29,9 @@ const Hero = () => {
                         </div>
                     </div>
                     <span className="inline-flex items-center justify-center gap-2 animate-text-gradient animate-background-shine bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-sm text-transparent">
-                        Interactive Video Learning
+                        No-Cure No-Pay Learning
                         <span className="text-xs text-secondary-foreground px-1.5 py-0.5 rounded-full bg-gradient-to-b from-foreground/20 to-foreground/10 flex items-center justify-center">
-                            What&apos;s new
+                            Risk-Free
                             <ArrowRightIcon className="w-3.5 h-3.5 ml-1 text-foreground/50" />
                         </span>
                     </span>
@@ -37,8 +43,32 @@ const Hero = () => {
             />
             <Container delay={0.1}>
                 <p className="text-sm sm:text-base lg:text-lg mt-4 text-accent-foreground/60 max-w-2xl mx-auto">
-                    Search-driven, practice-oriented learning journey with AI assistance. <span className="hidden sm:inline">Lumora AI transforms how you learn with interactive tools and outcome-focused courses.</span>
+                    Enhance your university's online degree programs and YouTube educational playlists. <span className="hidden sm:inline">Lumora AI provides powerful tools to transform passive video content into interactive learning experiences.</span>
                 </p>
+            </Container>
+
+            <Container delay={0.2}>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                    <Button onClick={handleTryRiskFree} size="lg" className="relative group w-full sm:w-auto">
+                        Try Risk-Free
+                        <ArrowRightIcon className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        <motion.div
+                            className="absolute -inset-0.5 rounded-lg blur-sm bg-gradient-to-r from-primary to-violet-500 opacity-75 group-hover:opacity-100 transition duration-300"
+                            animate={{
+                                opacity: [0.5, 0.75, 0.5],
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                            }}
+                            style={{ zIndex: -1 }}
+                        />
+                    </Button>
+                    <div className="flex items-center gap-2 text-sm text-accent-foreground/60">
+                        <ShieldCheck className="w-4 h-4 text-primary" />
+                        Pay only when satisfied
+                    </div>
+                </div>
             </Container>
 
             <Container delay={0.3}>

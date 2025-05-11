@@ -1,0 +1,37 @@
+/* Fix for scroll jumping issues, especially when changing scroll direction */
+html, body {
+  /* Disable smooth scrolling which can cause jumps */
+  scroll-behavior: auto !important;
+  /* Prevent browser scroll anchoring which can cause jumps */
+  overflow-anchor: none;
+  /* Prevent overscroll effects */
+  overscroll-behavior: none;
+  /* Improve scroll performance */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent animations from interfering with scroll events */
+.motion-safe {
+  /* Force hardware acceleration */
+  transform: translateZ(0);
+  /* Prevent animations from blocking scroll */
+  transition-delay: 0ms !important;
+  animation-delay: 0ms !important;
+}
+
+/* Prevent scroll position recalculation during animations */
+.scroll-container {
+  /* Prevent scroll anchoring */
+  overflow-anchor: none;
+  /* Improve scroll performance */
+  contain: layout paint;
+}
+
+/* Prevent scroll events from being blocked by animations */
+@media (prefers-reduced-motion: no-preference) {
+  .framer-motion-div {
+    /* Prevent animations from blocking scroll */
+    transition-delay: 0ms !important;
+    animation-delay: 0ms !important;
+  }
+}

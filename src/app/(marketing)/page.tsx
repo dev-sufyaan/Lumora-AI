@@ -2,10 +2,15 @@ import { Background, /* Companies, Connect, Features, */ Container, CTA, Hero, P
 import { Spotlight } from "@/components/ui/spotlight";
 import { generateMetadata } from "@/functions";
 import { Metadata } from "next";
+import NoCureNoPay from "@/components/marketing/no-cure-no-pay";
+import SocialProof from "@/components/marketing/social-proof";
+import ValueProposition from "@/components/marketing/value-proposition";
+import FAQ from "@/components/marketing/faq";
+import FreeDemo from "@/components/marketing/free-demo-cta";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Lumora AI - Interactive Video Learning Platform | Transform Your Learning Experience",
-  description: "Transform passive video watching into active learning with AI-powered tools. Our search-driven, practice-oriented platform offers personalized assistance and outcome-focused courses for maximum learning efficiency.",
+  title: "Lumora AI - Risk-Free Interactive Video Learning Platform | No-Cure No-Pay",
+  description: "Transform passive video watching into active learning with AI-powered tools. Our No-Cure No-Pay model ensures you only pay when satisfied with our interactive learning platform.",
   keywords: [
     "AI learning platform",
     "interactive video courses",
@@ -17,7 +22,9 @@ export const metadata: Metadata = generateMetadata({
     "e-learning platform",
     "AI-powered education",
     "video search learning",
-    "interactive educational platform"
+    "interactive educational platform",
+    "no-cure no-pay",
+    "risk-free learning"
   ],
   structuredData: {
     "@context": "https://schema.org",
@@ -25,7 +32,7 @@ export const metadata: Metadata = generateMetadata({
     "name": "Lumora AI",
     "url": process.env.NEXT_PUBLIC_APP_URL || "https://lumoraai.in",
     "logo": `${process.env.NEXT_PUBLIC_APP_URL || "https://lumoraai.in"}/logo.png`,
-    "description": "Transform passive video watching into active learning with AI-powered tools. Our search-driven, practice-oriented platform offers personalized assistance and outcome-focused courses for maximum learning efficiency.",
+    "description": "Transform passive video watching into active learning with AI-powered tools. Our No-Cure No-Pay model ensures you only pay when satisfied with our interactive learning platform.",
     "sameAs": [
       "https://twitter.com/lumoraai",
       "https://www.linkedin.com/company/lumora-ai",
@@ -45,6 +52,13 @@ const HomePage = () => {
                     />
                     <Hero />
                 </Container>
+                <NoCureNoPay />
+                <ValueProposition />
+                <Perks />
+                <SocialProof />
+                <AppointmentBooking />
+                <FreeDemo />
+                <FAQ />
                 {/* Companies component commented out
                 <Container className="py-8 lg:py-20">
                     <Companies />
@@ -56,15 +70,12 @@ const HomePage = () => {
                 {/* Features component commented out
                 <Features />
                 */}
-                <Perks />
-                <AppointmentBooking />
                 {/* Pricing component commented out
                 <Pricing />
                 */}
                 {/* Reviews component commented out
                 <Reviews />
                 */}
-
             </Wrapper>
         </Background>
     )
