@@ -77,7 +77,7 @@ const SocialProof = () => {
               </div>
               
               <p className="text-accent-foreground/80 text-sm mb-4">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </p>
               
               <div className="mt-auto pt-4 border-t border-border/40">

@@ -23,7 +23,7 @@ const Perks = () => {
                         Comprehensive Learning Solutions
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        Elevate your educational platform with Lumora AI's integrated tools designed to enhance student engagement, improve learning outcomes, and streamline administration
+                        Elevate your educational platform with Lumora AI&apos;s integrated tools designed to enhance student engagement, improve learning outcomes, and streamline administration
                     </p>
                 </motion.div>
             </Container>

@@ -22,7 +22,7 @@ const NoCureNoPay = () => {
                         <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">No-Cure No-Pay</span> Risk-Free Demo
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        We're so confident in our platform's ability to transform your university's LMS or educational content creator courses that we've adopted a revolutionary risk-free model. Pay only when you're satisfied with our product demo.
+                        We&apos;re so confident in our platform&apos;s ability to transform your university&apos;s LMS or educational content creator courses that we&apos;ve adopted a revolutionary risk-free model. Pay only when you&apos;re satisfied with our product demo.
                     </p>
                 </div>
 
@@ -43,7 +43,7 @@ const NoCureNoPay = () => {
                         </div>
                         <h3 className="text-xl font-medium mb-2">Satisfaction Guaranteed</h3>
                         <p className="text-accent-foreground/70 text-center">
-                            Only pay after experiencing how our AI-powered tools enhance and elevate your existing platform's capabilities.
+                            Only pay after experiencing how our AI-powered tools enhance and elevate your existing platform&apos;s capabilities.
                         </p>
                     </div>
 
@@ -67,7 +67,7 @@ const NoCureNoPay = () => {
                             <p className="text-accent-foreground/70">
                                 1. Test our platform with a free demo<br />
                                 2. Integrate it with your university LMS or video content<br />
-                                3. Only pay when you're satisfied with the Demo and ready for production
+                                3. Only pay when you&apos;re satisfied with the Demo and ready for production
                             </p>
                         </div>
                         

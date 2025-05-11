@@ -228,7 +228,7 @@ const AppointmentBooking = () => {
             Book your free consultation
           </h2>
           <p className="text-accent-foreground/60 max-w-md mx-auto mt-4">
-            Schedule a personalized demo to see how Lumora AI can transform your university's LMS or enhance your educational content.
+            Schedule a personalized demo to see how Lumora AI can transform your university&apos;s LMS or enhance your educational content.
           </p>
         </motion.div>
       </Container>

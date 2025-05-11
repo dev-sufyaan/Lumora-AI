@@ -31,11 +31,11 @@ const FreeDemo = () => {
               </div>
               
               <h2 className="text-2xl md:text-4xl font-heading font-medium !leading-snug mb-4">
-                Transform Your Platform's Learning Experience with <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">Zero Risk</span>
+                Transform Your Platform&apos;s Learning Experience with <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">Zero Risk</span>
               </h2>
               
               <p className="text-accent-foreground/80 mb-6 max-w-xl">
-                Experience how Lumora AI can enhance your institution's online courses or YouTube educational content without any commitment. Our No-Cure No-Pay model means you only pay if you're completely satisfied with the Demo.
+                Experience how Lumora AI can enhance your institution&apos;s online courses or YouTube educational content without any commitment. Our No-Cure No-Pay model means you only pay if you&apos;re completely satisfied with the Demo.
               </p>
               
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">

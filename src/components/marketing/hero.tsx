@@ -43,7 +43,7 @@ const Hero = () => {
             />
             <Container delay={0.1}>
                 <p className="text-sm sm:text-base lg:text-lg mt-4 text-accent-foreground/60 max-w-2xl mx-auto">
-                    Enhance your university's online degree programs and YouTube educational playlists. <span className="hidden sm:inline">Lumora AI provides powerful tools to transform passive video content into interactive learning experiences.</span>
+                    Enhance your university&apos;s online degree programs and YouTube educational playlists. <span className="hidden sm:inline">Lumora AI provides powerful tools to transform passive video content into interactive learning experiences.</span>
                 </p>
             </Container>
 

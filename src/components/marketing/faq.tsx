@@ -76,7 +76,7 @@ const FAQ = () => {
         <div className="mt-16 max-w-3xl mx-auto text-center">
           <h3 className="text-xl font-medium mb-4">Still have questions?</h3>
           <p className="text-muted-foreground mb-6">
-            Our team is ready to help you understand how Lumora AI can transform your institution's online learning experience.
+            Our team is ready to help you understand how Lumora AI can transform your institution&apos;s online learning experience.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button onClick={handleContactSupport} variant="outline">

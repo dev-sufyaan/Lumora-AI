@@ -55,7 +55,7 @@ const ValueProposition = () => {
             Transform your learning, <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">risk-free</span>
           </h2>
           <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-            Our interactive AI learning platform delivers concrete, measurable improvements to your educational outcomes. Don't just watch videos—engage, practice, and master.
+            Our interactive AI learning platform delivers concrete, measurable improvements to your educational outcomes. Don&apos;t just watch videos—engage, practice, and master.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ const ValueProposition = () => {
           <div className="text-center mb-6">
             <h3 className="text-xl md:text-2xl font-medium mb-2">Calculate Your Learning ROI</h3>
             <p className="text-accent-foreground/70 max-w-2xl mx-auto">
-              See exactly how much time and money you can save by switching to Lumora AI's interactive learning platform. 
+              See exactly how much time and money you can save by switching to Lumora AI&apos;s interactive learning platform. 
             </p>
           </div>
           
