@@ -419,7 +419,8 @@ const AppointmentBooking = () => {
                   <SelectTrigger disabled={isLoading} className="w-full">
                     <SelectValue placeholder="Select a topic" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="z-50 relative">
+                    <div className="fixed inset-0 bg-background/50 touch-none" onClick={(e) => e.stopPropagation()}></div>
                     <SelectItem value="product-demo">Platform Demo</SelectItem>
                     <SelectItem value="pricing">Pricing For Universities</SelectItem>
                     <SelectItem value="integration">LMS Integration Options</SelectItem>
@@ -452,7 +453,8 @@ const AppointmentBooking = () => {
                   <SelectTrigger disabled={isLoading} className="w-full">
                     <SelectValue placeholder="Select a time" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="z-50 relative">
+                    <div className="fixed inset-0 bg-background/50 touch-none" onClick={(e) => e.stopPropagation()}></div>
                     <SelectItem value="9-10">9:00 AM - 10:00 AM</SelectItem>
                     <SelectItem value="10-11">10:00 AM - 11:00 AM</SelectItem>
                     <SelectItem value="11-12">11:00 AM - 12:00 PM</SelectItem>
