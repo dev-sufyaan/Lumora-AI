@@ -1,17 +1,28 @@
 "use client";
 
-import { ArrowRightIcon, Volume2, VolumeX, ShieldCheck } from "lucide-react";
+import { ArrowRightIcon, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { BlurText } from "../ui/blur-text";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Container from "../global/container";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { scrollToSection } from "@/functions";
+import PlyrVideo from "../ui/plyr-video";
+import PlyrStyles from "../ui/plyr-styles";
+import { useMediaQuery, useTouchDevice } from "@/hooks/useMediaQuery";
 
 const Hero = () => {
     const [isMuted, setIsMuted] = useState(true);
+    const [isClient, setIsClient] = useState(false);
+    const isMobile = !useMediaQuery('(min-width: 768px)');
+    const isTouch = useTouchDevice();
+    
+    // Handle client-side rendering
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
     
     const handleTryRiskFree = () => {
         scrollToSection('book-appointment');
@@ -19,6 +30,9 @@ const Hero = () => {
     
     return (
         <div id="hero" className="flex flex-col items-center text-center w-full max-w-5xl my-24 mx-auto z-40 relative">
+            {/* Load Plyr styles on client-side */}
+            {isClient && <PlyrStyles />}
+            
             <Container delay={0.0}>
                 <div className="pl-2 pr-1 py-1 rounded-full border border-foreground/10 hover:border-foreground/15 backdrop-blur-lg cursor-pointer flex items-center gap-2.5 select-none w-max mx-auto">
                     <div className="w-3.5 h-3.5 rounded-full bg-primary/40 flex items-center justify-center relative">
@@ -76,20 +90,59 @@ const Hero = () => {
                     <div className="absolute top-1/4 left-1/2 -z-10 gradient w-3/4 -translate-x-1/2 h-1/4 -translate-y-1/2 inset-0 blur-[10rem]"></div>
 
                     <div className="rounded-lg lg:rounded-[24px] border p-2 border-neutral-700 bg-black relative group">
-                        <video
-                            src="/images/Creators & Students Unite： Revolutionize Learning with Lumora AI.mp4"
-                            autoPlay
-                            muted={isMuted}
-                            loop
-                            playsInline
-                            width={1920}
-                            height={1080}
-                            className="rounded-lg lg:rounded-[20px] cursor-pointer"
-                            onClick={() => setIsMuted(!isMuted)}
-                        />
-                        <div className="absolute bottom-4 right-4 bg-black/60 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" onClick={() => setIsMuted(!isMuted)}>
-                            {isMuted ? <VolumeX className="w-5 h-5 text-white" /> : <Volume2 className="w-5 h-5 text-white" />}
-                        </div>
+                        {isClient ? (
+                            <PlyrVideo 
+                                src="/images/Creators & Students Unite： Revolutionize Learning with Lumora AI.mp4"
+                                className="rounded-lg lg:rounded-[20px]"
+                                options={{
+                                    muted: isMuted,
+                                    autoplay: true,
+                                    loop: { active: true },
+                                    hideControls: false,
+                                    controls: [
+                                        'play-large',
+                                        'play', 
+                                        'progress', 
+                                        'current-time',
+                                        'mute',
+                                        'volume',
+                                        'fullscreen'
+                                    ],
+                                    clickToPlay: true,
+                                    preload: 'auto',
+                                    loadSprite: true,
+                                    iconUrl: '/icons/plyr.svg',
+                                    blankVideo: '/blank.mp4',
+                                    storage: { enabled: false },
+                                }}
+                                onReady={(player) => {
+                                    // Fix potential playback issues
+                                    setTimeout(() => {
+                                        if (player && player.play) {
+                                            try {
+                                                player.play().catch(() => {
+                                                    // Autoplay was prevented, mute and try again
+                                                    player.muted = true;
+                                                    player.play().catch(console.error);
+                                                });
+                                            } catch (error) {
+                                                console.error("Plyr play error:", error);
+                                            }
+                                        }
+                                    }, 100);
+                                }}
+                            />
+                        ) : (
+                            // Fallback for server-side rendering
+                            <video
+                                src="/images/Creators & Students Unite： Revolutionize Learning with Lumora AI.mp4"
+                                className="rounded-lg lg:rounded-[20px]"
+                                muted
+                                playsInline
+                                width={1920}
+                                height={1080}
+                            />
+                        )}
                     </div>
                 </div>
             </Container>
