@@ -250,7 +250,7 @@ export const Particles: React.FC<ParticlesProps> = ({
             }
         });
         requestAnimationFrame(animate);
-    }, [clearContext, circles, context, canvasSize, mouse, staticity, ease, vx, vy, drawCircle, circleParams]);
+    }, [clearContext, circles, canvasSize, mouse, staticity, ease, vx, vy, drawCircle, circleParams]);
 
     // useEffect hooks
     useEffect(() => {

@@ -53,7 +53,7 @@ const NoCureNoPay = () => {
                         </div>
                         <h3 className="text-xl font-medium mb-2">Customizable Solutions</h3>
                         <p className="text-accent-foreground/70 text-center">
-                            Tailor our AI tools to fit your institution's unique requirements, ensuring seamless integration and maximum impact.
+                            Tailor our AI tools to fit your institution&apos;s unique requirements, ensuring seamless integration and maximum impact.
                         </p>
                     </div>
                 </div>
