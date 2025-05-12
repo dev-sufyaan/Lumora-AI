@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+// Import Plyr CSS statically
+import "plyr/dist/plyr.css";
 
 export default function PlyrStyles() {
   useEffect(() => {
-    // Import Plyr CSS
-    import('plyr/dist/plyr.css');
     
     // Import custom Plyr styles
     const style = document.createElement('style');
