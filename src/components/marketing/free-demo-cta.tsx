@@ -60,7 +60,7 @@ const FreeDemo = () => {
             <div className="flex flex-col items-center space-y-4">
               <div className="relative">
                 <Button onClick={handleTryRiskFree} size="lg" className="relative px-8 py-6 text-lg group">
-                  Get Started Free
+                  Start for free
                   <ArrowRightIcon className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                   <motion.div
                     className="absolute -inset-0.5 rounded-lg blur-sm bg-gradient-to-r from-primary to-violet-500 opacity-75 group-hover:opacity-100 transition duration-300"

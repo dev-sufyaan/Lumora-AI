@@ -29,7 +29,7 @@ const Hero = () => {
                         </div>
                     </div>
                     <span className="inline-flex items-center justify-center gap-2 animate-text-gradient animate-background-shine bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-sm text-transparent">
-                        No-Cure No-Pay Learning
+                        No-Cure No-Pay!
                         <span className="text-xs text-secondary-foreground px-1.5 py-0.5 rounded-full bg-gradient-to-b from-foreground/20 to-foreground/10 flex items-center justify-center">
                             Risk-Free
                             <ArrowRightIcon className="w-3.5 h-3.5 ml-1 text-foreground/50" />
@@ -38,19 +38,19 @@ const Hero = () => {
                 </div>
             </Container>
             <BlurText
-                word={"Turn passive video watching\n into active learning"}
+                word={"Let AI Turn Your YouTube Content into a Recurring Revenue Machine"}
                 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent py-2 md:py-0 lg:!leading-snug font-medium racking-[-0.0125em] mt-6 font-heading"
             />
             <Container delay={0.1}>
                 <p className="text-sm sm:text-base lg:text-lg mt-4 text-accent-foreground/60 max-w-2xl mx-auto">
-                    Enhance your university&apos;s online degree programs and YouTube educational playlists. <span className="hidden sm:inline">Lumora AI provides powerful tools to transform passive video content into interactive learning experiences.</span>
+                    Turn viewers into paying learners with zero extra effort — we handle the tech, so you can keep creating your content, just as you were
                 </p>
             </Container>
 
             <Container delay={0.2}>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
                     <Button onClick={handleTryRiskFree} size="lg" className="relative group w-full sm:w-auto">
-                        Try Risk-Free
+                        Start for free
                         <ArrowRightIcon className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                         <motion.div
                             className="absolute -inset-0.5 rounded-lg blur-sm bg-gradient-to-r from-primary to-violet-500 opacity-75 group-hover:opacity-100 transition duration-300"
@@ -66,7 +66,7 @@ const Hero = () => {
                     </Button>
                     <div className="flex items-center gap-2 text-sm text-accent-foreground/60">
                         <ShieldCheck className="w-4 h-4 text-primary" />
-                        Pay only when satisfied
+                        No upfront fees. We only earn when you do.
                     </div>
                 </div>
             </Container>

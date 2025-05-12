@@ -53,7 +53,7 @@ const NoCureNoPay = () => {
                         </div>
                         <h3 className="text-xl font-medium mb-2">Customizable Solutions</h3>
                         <p className="text-accent-foreground/70 text-center">
-                            Tailor our AI tools to fit your institution’s unique requirements, ensuring seamless integration and maximum impact.
+                            Tailor our AI tools to fit your institution's unique requirements, ensuring seamless integration and maximum impact.
                         </p>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ const NoCureNoPay = () => {
                         </div>
                         
                         <Button onClick={handleGetStarted} size="lg" className="relative group">
-                            Get Started Free
+                            Start for free
                             <ArrowRightIcon className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                             <motion.div
                                 className="absolute -inset-0.5 rounded-lg blur-sm bg-gradient-to-r from-primary to-violet-500 opacity-75 group-hover:opacity-100 transition duration-300"
