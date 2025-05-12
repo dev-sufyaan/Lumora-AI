@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Plyr styles */
-@import './plyr.css';
-
 /* @layer base {
   .dark {
     --background: 0 0% 100%;

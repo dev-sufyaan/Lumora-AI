@@ -4,6 +4,8 @@ import { useEffect } from "react";
 
 export default function PlyrStyles() {
   useEffect(() => {
+    // Import Plyr CSS
+    import('plyr/dist/plyr.css');
     
     // Import custom Plyr styles
     const style = document.createElement('style');
