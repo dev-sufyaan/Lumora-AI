@@ -70,27 +70,6 @@ export default function PlyrStyles() {
         .plyr__control {
           padding: 10px;
         }
-        
-        /* Fix for volume bar being too large on mobile */
-        .plyr__volume {
-          max-width: 80px !important;
-        }
-        
-        /* Make progress bar more prominent */
-        .plyr--full-ui input[type=range].plyr__progress--seeking {
-          height: 4px;
-        }
-        
-        .plyr__progress input[type=range], 
-        .plyr__progress__buffer {
-          height: 4px !important;
-        }
-        
-        /* Ensure progress bar has priority in layout */
-        .plyr__controls .plyr__progress__container {
-          flex: 1 1 auto !important;
-          min-width: 50% !important;
-        }
       }
       
       /* Ensure fullscreen works properly */
