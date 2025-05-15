@@ -27,7 +27,7 @@ const FreeDemo = () => {
                 <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                   <LightbulbIcon className="h-5 w-5 text-primary" />
                 </div>
-                <p className="text-sm font-medium text-primary">Let's Talk Business</p>
+                <p className="text-sm font-medium text-primary">Let&apos;s Talk Business</p>
               </div>
               
               <h2 className="text-2xl md:text-4xl font-heading font-medium !leading-snug mb-4">
