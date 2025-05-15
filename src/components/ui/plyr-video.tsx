@@ -41,7 +41,7 @@ const PlyrVideo = ({ src, poster, options, className, onReady }: PlyrVideoProps)
       controls: controlsForDevice,
       ratio: '16:9',
       fullscreen: { enabled: true, fallback: true, iosNative: true },
-      autoplay: true,
+      autoplay: false,
       muted: isMuted,
       loop: { active: true },
       keyboard: { focused: true, global: false },
@@ -137,7 +137,6 @@ const PlyrVideo = ({ src, poster, options, className, onReady }: PlyrVideoProps)
           poster={poster}
           playsInline
           muted
-          autoPlay
           loop
         >
           <source src={src} type="video/mp4" />
@@ -155,7 +154,6 @@ const PlyrVideo = ({ src, poster, options, className, onReady }: PlyrVideoProps)
         poster={poster}
         playsInline
         muted={isMuted}
-        autoPlay
         loop
       >
         <source src={src} type="video/mp4" />

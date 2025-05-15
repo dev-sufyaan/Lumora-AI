@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn, scrollToSection } from "@/functions";
 import { useClickOutside } from "@/hooks";
 import { motion } from "framer-motion";
-import { Box, CalendarClock, Captions, CircleHelp, CopyCheck, FileText, Gem, Home, Layers3, LineChart, Newspaper, UserCog, Waypoints, CalendarIcon, BarChart2, PhoneIcon, ShieldCheck, Heart, Award, MessageSquareWarning, Users } from "lucide-react";
+import { Box, CalendarClock, Captions, CircleHelp, CopyCheck, FileText, Gem, Home, Layers3, LineChart, Newspaper, UserCog, Waypoints, CalendarIcon, BarChart2, PhoneIcon, ShieldCheck, Heart, Award, MessageSquareWarning, Users, DollarSign } from "lucide-react";
 import Link from "next/link";
 import React from 'react';
 import { Button } from "../ui/button";
@@ -99,7 +99,7 @@ const MobileMenu = ({ isOpen, setIsOpen, handleClose }: Props) => {
                     >
                         <div className="flex items-center w-full text-start">
                             <Heart className="w-4 h-4 mr-2" />
-                            Transform Learning
+                            Features
                         </div>
                     </li>
                     <li
@@ -112,6 +112,18 @@ const MobileMenu = ({ isOpen, setIsOpen, handleClose }: Props) => {
                         <div className="flex items-center w-full text-start">
                             <Gem className="w-4 h-4 mr-2" />
                             Benefits
+                        </div>
+                    </li>
+                    <li
+                        onClick={() => {
+                            scrollToSection('money-math');
+                            setIsOpen(false);
+                        }}
+                        className="w-full px-4 py-2 text-lg hover:text-muted-foreground font-normal transition transform rounded-md cursor-pointer text-foreground text-start active:scale-95 hover:bg-muted/20 active:opacity-80"
+                    >
+                        <div className="flex items-center w-full text-start">
+                            <DollarSign className="w-4 h-4 mr-2" />
+                            Money Math
                         </div>
                     </li>
                     <li
@@ -135,7 +147,7 @@ const MobileMenu = ({ isOpen, setIsOpen, handleClose }: Props) => {
                     >
                         <div className="flex items-center w-full text-start">
                             <CalendarClock className="w-4 h-4 mr-2" />
-                            Consultation
+                            Let's Talk
                         </div>
                     </li>
                     <li
@@ -158,7 +170,7 @@ const MobileMenu = ({ isOpen, setIsOpen, handleClose }: Props) => {
                             size="lg"
                         >
                             <PhoneIcon className="w-4 h-4 mr-2" />
-                            Contact
+                            WhatsApp
                         </Button>
                         
                         <Button 
@@ -168,7 +180,7 @@ const MobileMenu = ({ isOpen, setIsOpen, handleClose }: Props) => {
                             size="lg"
                         >
                             <CalendarIcon className="w-4 h-4 mr-2" />
-                            Book Appointment
+                            Schedule a Call
                         </Button>
                     </div>
                 </ul>

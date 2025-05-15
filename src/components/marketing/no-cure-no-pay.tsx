@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRightIcon, BadgeCheck, Clock, Shield } from "lucide-react";
+import { ArrowRightIcon, BadgeCheck, Clock, Shield, Gem } from "lucide-react";
 import { SectionBadge } from "../ui/section-bade";
 import Container from "../global/container";
 import { Button } from "../ui/button";
@@ -19,10 +19,10 @@ const NoCureNoPay = () => {
                 <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
                     <SectionBadge title="Our Guarantee" />
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-                        <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">No-Cure No-Pay</span> Risk-Free Demo
+                        <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">No-Cure No-Pay</span> Risk-Free Model
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        We&apos;re so confident in our platform&apos;s ability to transform your university&apos;s LMS or educational content creator courses that we&apos;ve adopted a revolutionary risk-free model. Pay only when you&apos;re satisfied with our product demo.
+                        We're so confident in our platform's ability to help you monetize your YouTube content that we've adopted a revolutionary risk-free model. You only pay when you start making money from your audience.
                     </p>
                 </div>
 
@@ -33,7 +33,7 @@ const NoCureNoPay = () => {
                         </div>
                         <h3 className="text-xl font-medium mb-2">Zero Risk</h3>
                         <p className="text-accent-foreground/70 text-center">
-                            No upfront costs or commitment. We take all the risk so your institution can focus on education delivery.
+                            No upfront costs or commitment. We take all the risk so you can focus on creating your YouTube content.
                         </p>
                     </div>
 
@@ -41,19 +41,19 @@ const NoCureNoPay = () => {
                         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                             <BadgeCheck className="w-6 h-6 text-primary" />
                         </div>
-                        <h3 className="text-xl font-medium mb-2">Satisfaction Guaranteed</h3>
+                        <h3 className="text-xl font-medium mb-2">Success-Based Pricing</h3>
                         <p className="text-accent-foreground/70 text-center">
-                            Only pay after experiencing how our AI-powered tools enhance and elevate your existing platform&apos;s capabilities.
+                            We only charge $1 per student per month—after you hit your first 100 students. Our success is directly tied to yours.
                         </p>
                     </div>
 
                     <div className="flex flex-col items-center p-6 rounded-2xl border border-border/60 bg-gradient-to-b from-background/50 to-background hover:shadow-md transition-all duration-300">
                         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                            <Clock className="w-6 h-6 text-primary" />
+                            <Gem className="w-6 h-6 text-primary" />
                         </div>
-                        <h3 className="text-xl font-medium mb-2">Customizable Solutions</h3>
+                        <h3 className="text-xl font-medium mb-2">White-Labeled Platform</h3>
                         <p className="text-accent-foreground/70 text-center">
-                            Tailor our AI tools to fit your institution&apos;s unique requirements, ensuring seamless integration and maximum impact.
+                            Get your own branded learning platform without any development costs or technical expertise required.
                         </p>
                     </div>
                 </div>
@@ -65,14 +65,14 @@ const NoCureNoPay = () => {
                         <div className="flex-1">
                             <h3 className="text-xl md:text-2xl font-medium mb-3">How Our No-Cure No-Pay Model Works</h3>
                             <p className="text-accent-foreground/70">
-                                1. Test our platform with a free demo<br />
-                                2. Integrate it with your university LMS or video content<br />
-                                3. Only pay when you&apos;re satisfied with the Demo and ready for production
+                                1. We set up your white-labeled platform with your content<br />
+                                2. Your students enjoy a premium learning experience<br />
+                                3. You only pay $1 per student per month after reaching 100 students
                             </p>
                         </div>
                         
                         <Button onClick={handleGetStarted} size="lg" className="relative group">
-                            Start for free
+                            Schedule a call
                             <ArrowRightIcon className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                             <motion.div
                                 className="absolute -inset-0.5 rounded-lg blur-sm bg-gradient-to-r from-primary to-violet-500 opacity-75 group-hover:opacity-100 transition duration-300"

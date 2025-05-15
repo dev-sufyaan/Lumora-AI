@@ -55,6 +55,21 @@ function SelectContent({
   position = "popper",
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Content>) {
+  React.useEffect(() => {
+    // Add a class to the body to prevent it from scrolling when content is open
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = 'auto';
+      document.body.style.paddingRight = '0px';
+    }
+    return () => {
+      // Clean up when component unmounts
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }
+    };
+  }, []);
+  
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
@@ -66,6 +81,9 @@ function SelectContent({
           className
         )}
         position={position}
+        sideOffset={4}
+        alignOffset={0}
+        avoidCollisions={true}
         {...props}
       >
         <SelectScrollUpButton />

@@ -43,7 +43,7 @@ const Hero = () => {
                         </div>
                     </div>
                     <span className="inline-flex items-center justify-center gap-2 animate-text-gradient animate-background-shine bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-sm text-transparent">
-                        No-Cure No-Pay!
+                        No-Cure? No-Pay!
                         <span className="text-xs text-secondary-foreground px-1.5 py-0.5 rounded-full bg-gradient-to-b from-foreground/20 to-foreground/10 flex items-center justify-center">
                             Risk-Free
                             <ArrowRightIcon className="w-3.5 h-3.5 ml-1 text-foreground/50" />
@@ -52,12 +52,12 @@ const Hero = () => {
                 </div>
             </Container>
             <BlurText
-                word={"Let AI Turn Your YouTube Content into a Recurring Revenue Machine"}
+                word={"Transform Your YouTube Content Into a Premium Learning Platform"}
                 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent py-2 md:py-0 lg:!leading-snug font-medium tracking-[-0.0125em] mt-6 font-heading"
             />
             <Container delay={0.1}>
                 <p className="text-sm sm:text-base lg:text-lg mt-4 text-accent-foreground/60 max-w-2xl mx-auto">
-                    Turn viewers into paying learners with zero extra effort — we handle the tech, so you can keep creating your content, just as you were
+                    Your own white-labeled platform with AI assistant, interactive quizzes, and smart notes—we handle everything while you keep creating content just like before
                 </p>
             </Container>
 
@@ -96,7 +96,7 @@ const Hero = () => {
                                 className="rounded-lg lg:rounded-[20px]"
                                 options={{
                                     muted: isMuted,
-                                    autoplay: true,
+                                    autoplay: false,
                                     loop: { active: true },
                                     hideControls: false,
                                     controls: [
@@ -116,20 +116,7 @@ const Hero = () => {
                                     storage: { enabled: false },
                                 }}
                                 onReady={(player) => {
-                                    // Fix potential playback issues
-                                    setTimeout(() => {
-                                        if (player && player.play) {
-                                            try {
-                                                player.play().catch(() => {
-                                                    // Autoplay was prevented, mute and try again
-                                                    player.muted = true;
-                                                    player.play().catch(console.error);
-                                                });
-                                            } catch (error) {
-                                                console.error("Plyr play error:", error);
-                                            }
-                                        }
-                                    }, 100);
+                                    // Don't auto-play video
                                 }}
                             />
                         ) : (

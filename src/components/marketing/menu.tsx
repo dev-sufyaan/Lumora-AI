@@ -39,7 +39,7 @@ const Menu = () => {
                         onClick={() => scrollToSection('value-proposition')} 
                         className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
                     >
-                        Transform Learning
+                        Features
                     </div>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
@@ -48,6 +48,14 @@ const Menu = () => {
                         className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
                     >
                         Benefits
+                    </div>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <div 
+                        onClick={() => scrollToSection('money-math')} 
+                        className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
+                    >
+                        Money Math
                     </div>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
@@ -63,7 +71,7 @@ const Menu = () => {
                         onClick={() => scrollToSection('book-appointment')} 
                         className="h-10 px-4 py-2 text-sm font-normal rounded-md text-muted-foreground hover:text-foreground w-max hover:bg-none cursor-pointer flex items-center"
                     >
-                        Consultation
+                        Let's Talk
                     </div>
                 </NavigationMenuItem>
                 <NavigationMenuItem>

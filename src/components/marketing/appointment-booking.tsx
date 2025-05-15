@@ -134,7 +134,7 @@ const AppointmentBooking = () => {
       // Complete the booking process
       setIsLoading(false);
       setIsSubmitted(true);
-      toast.success("Appointment booked successfully!");
+      toast.success("Call scheduled successfully!");
     } catch (error: any) {
       console.error('Detailed booking error:', {
         message: error?.message,
@@ -192,10 +192,10 @@ const AppointmentBooking = () => {
   // Get topic label from value
   const getTopicLabel = (value: string) => {
     const topics = {
-      'product-demo': 'Platform Demo',
-      'pricing': 'Pricing For Universities',
-      'integration': 'LMS Integration Options',
-      'custom': 'Content Creator Solutions'
+      'product-demo': 'Premium Platform Demo',
+      'pricing': 'YouTube Monetization Strategy',
+      'integration': 'Content Integration Process',
+      'custom': 'Custom Creator Solution'
     };
     return topics[value as keyof typeof topics] || value;
   };
@@ -223,12 +223,12 @@ const AppointmentBooking = () => {
     <div id="book-appointment" className="py-16 md:py-24 lg:py-32 w-full relative">
       <Container>
         <motion.div variants={FADE_IN_VARIANTS} className="flex flex-col items-center text-center">
-          <SectionBadge title="Schedule a Demo" />
+          <SectionBadge title="Let's Talk" />
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium mt-6">
-            Book your free consultation
+            Let's talk so we can both win
           </h2>
           <p className="text-accent-foreground/60 max-w-md mx-auto mt-4">
-            Schedule a personalized demo to see how Lumora AI can transform your university&apos;s LMS or enhance your educational content.
+            Book a free call to see how our risk-free platform can help you generate $3,000-$5,000/month with zero effort from your end.
           </p>
         </motion.div>
       </Container>
@@ -324,7 +324,7 @@ const AppointmentBooking = () => {
                       <th className="text-left p-2 hidden md:table-cell">Phone</th>
                       <th className="text-left p-2">Date</th>
                       <th className="text-left p-2 hidden md:table-cell">Time</th>
-                      <th className="text-left p-2 hidden md:table-cell">Topic</th>
+                      <th className="text-left p-2 hidden md:table-cell">Call Topic</th>
                       <th className="text-center p-2">Actions</th>
                     </tr>
                   </thead>
@@ -413,25 +413,24 @@ const AppointmentBooking = () => {
               
               <div className="w-full">
                 <label htmlFor="topic" className="block text-sm font-medium mb-2">
-                  Consultation Topic
+                  Call Topic
                 </label>
                 <Select value={topic} onValueChange={setTopic}>
                   <SelectTrigger disabled={isLoading} className="w-full">
                     <SelectValue placeholder="Select a topic" />
                   </SelectTrigger>
-                  <SelectContent className="z-50 relative">
-                    <div className="fixed inset-0 bg-background/50 touch-none" onClick={(e) => e.stopPropagation()}></div>
-                    <SelectItem value="product-demo">Platform Demo</SelectItem>
-                    <SelectItem value="pricing">Pricing For Universities</SelectItem>
-                    <SelectItem value="integration">LMS Integration Options</SelectItem>
-                    <SelectItem value="custom">Content Creator Solutions</SelectItem>
+                  <SelectContent className="relative z-[100]" position="popper">
+                    <SelectItem value="product-demo">Premium Platform Demo</SelectItem>
+                    <SelectItem value="pricing">YouTube Monetization Strategy</SelectItem>
+                    <SelectItem value="integration">Content Integration Process</SelectItem>
+                    <SelectItem value="custom">Custom Creator Solution</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               
               <div className="w-full">
                 <label htmlFor="date" className="block text-sm font-medium mb-2">
-                  Preferred Date
+                  Preferred Call Date
                 </label>
                 <Input
                   id="date"
@@ -447,14 +446,13 @@ const AppointmentBooking = () => {
               
               <div className="w-full">
                 <label htmlFor="time" className="block text-sm font-medium mb-2">
-                  Preferred Time
+                  Preferred Call Time
                 </label>
                 <Select value={time} onValueChange={setTime}>
                   <SelectTrigger disabled={isLoading} className="w-full">
                     <SelectValue placeholder="Select a time" />
                   </SelectTrigger>
-                  <SelectContent className="z-50 relative">
-                    <div className="fixed inset-0 bg-background/50 touch-none" onClick={(e) => e.stopPropagation()}></div>
+                  <SelectContent className="relative z-[100]" position="popper">
                     <SelectItem value="9-10">9:00 AM - 10:00 AM</SelectItem>
                     <SelectItem value="10-11">10:00 AM - 11:00 AM</SelectItem>
                     <SelectItem value="11-12">11:00 AM - 12:00 PM</SelectItem>
@@ -480,7 +478,7 @@ const AppointmentBooking = () => {
                     Processing...
                   </>
                 ) : (
-                  "Book Consultation"
+                  "Schedule a Call"
                 )}
               </Button>
             </div>
@@ -497,9 +495,9 @@ const AppointmentBooking = () => {
                 <CheckIcon className="h-10 w-10 text-green-600 dark:text-green-400" />
               </div>
             </div>
-            <h3 className="mt-6 text-xl font-medium">Appointment Confirmed</h3>
+            <h3 className="mt-6 text-xl font-medium">Call Scheduled</h3>
             <p className="mt-2 text-muted-foreground">
-              Thank you for booking a consultation. Our team will contact you to discuss how we can enhance your educational platform.
+              Thank you for scheduling a call. Our team will contact you to discuss how we can help you monetize your YouTube content.
             </p>
             <div className="mt-6 space-y-2">
               <div className="bg-accent/10 rounded-md p-4 text-left max-w-md mx-auto">
@@ -519,7 +517,7 @@ const AppointmentBooking = () => {
                   <div className="text-sm text-muted-foreground">Time:</div>
                   <div className="text-sm font-medium">{getTimeLabel(time)}</div>
                   
-                  <div className="text-sm text-muted-foreground">Topic:</div>
+                  <div className="text-sm text-muted-foreground">Call Topic:</div>
                   <div className="text-sm font-medium">{getTopicLabel(topic)}</div>
                 </div>
               </div>
@@ -528,7 +526,7 @@ const AppointmentBooking = () => {
                 variant="outline" 
                 onClick={handleReset}
               >
-                Book another appointment
+                Schedule another call
               </Button>
             </div>
           </motion.div>

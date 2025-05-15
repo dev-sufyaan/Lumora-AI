@@ -27,25 +27,25 @@ const FreeDemo = () => {
                 <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                   <LightbulbIcon className="h-5 w-5 text-primary" />
                 </div>
-                <p className="text-sm font-medium text-primary">Risk-Free Learning</p>
+                <p className="text-sm font-medium text-primary">Let's Talk Business</p>
               </div>
               
               <h2 className="text-2xl md:text-4xl font-heading font-medium !leading-snug mb-4">
-                Transform Your Platform&apos;s Learning Experience with <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">Zero Risk</span>
+                So, what would this be <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">worth to you?</span>
               </h2>
               
               <p className="text-accent-foreground/80 mb-6 max-w-xl">
-                Experience how Lumora AI can enhance your institution&apos;s online courses or YouTube educational content without any commitment. Our No-Cure No-Pay model means you only pay if you&apos;re completely satisfied with the Demo.
+                As we promised a completely risk-free guarantee, we've priced our service based on your success. We only charge $1 per student per month—after you hit your first 100 students.
               </p>
               
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {[
-                  "No payment information required",
-                  "Full-featured integration demo",
-                  "Personalized onboarding support",
-                  "Technical integration assistance",
-                  "100% satisfaction guarantee after demo",
-                  "Free demo available"
+                  "No upfront costs",
+                  "White-labeled platform",
+                  "Full AI features included",
+                  "Integration with your content",
+                  "Custom branding and domain",
+                  "Payment only when you succeed"
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center">
                     <div className="mr-2 h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center">
@@ -60,7 +60,7 @@ const FreeDemo = () => {
             <div className="flex flex-col items-center space-y-4">
               <div className="relative">
                 <Button onClick={handleTryRiskFree} size="lg" className="relative px-8 py-6 text-lg group">
-                  Start for free
+                  Book a meeting
                   <ArrowRightIcon className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                   <motion.div
                     className="absolute -inset-0.5 rounded-lg blur-sm bg-gradient-to-r from-primary to-violet-500 opacity-75 group-hover:opacity-100 transition duration-300"
@@ -76,12 +76,12 @@ const FreeDemo = () => {
                 </Button>
                 
                 <div className="absolute -top-3 right-0 bg-primary/10 px-3 py-1 rounded-full border border-primary/20 transform rotate-3">
-                  <span className="text-xs font-medium animate-pulse text-primary">No credit card</span>
+                  <span className="text-xs font-medium animate-pulse text-primary">Free call</span>
                 </div>
               </div>
               
               <p className="text-xs text-center text-muted-foreground">
-                Discover how leading institutions and educators are revolutionizing learning with our platform
+                Let's talk so we can both win. It's free.
               </p>
             </div>
           </div>

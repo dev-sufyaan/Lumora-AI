@@ -1,4 +1,4 @@
-import { Background, /* Companies, Connect, Features, */ Container, CTA, Hero, Perks, AppointmentBooking, /* Pricing, Reviews, */ Wrapper } from "@/components";
+import { Background, /* Companies, Connect, Features, */ Container, CTA, Hero, Perks, AppointmentBooking, /* Pricing, Reviews, */ Wrapper, VideoFeatures, MoneyMath } from "@/components";
 import { Spotlight } from "@/components/ui/spotlight";
 import { generateMetadata } from "@/functions";
 import { Metadata } from "next";
@@ -9,22 +9,22 @@ import FAQ from "@/components/marketing/faq";
 import FreeDemo from "@/components/marketing/free-demo-cta";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Lumora AI - Risk-Free Interactive Video Learning Platform | No-Cure No-Pay",
-  description: "Transform passive video watching into active learning with AI-powered tools. Our No-Cure No-Pay model ensures you only pay when satisfied with our interactive learning platform.",
+  title: "Lumora AI - Risk-Free YouTube Monetization Platform | No-Cure No-Pay",
+  description: "Transform your YouTube content into a premium learning experience with AI-powered tools. Our No-Cure No-Pay model ensures you only pay when you're making money.",
   keywords: [
-    "AI learning platform",
-    "interactive video courses",
-    "video learning assistant",
-    "personalized learning",
+    "YouTube monetization",
+    "content creator platform",
+    "AI learning assistant",
+    "YouTube alternative",
     "educational AI technology",
-    "online video courses",
-    "active learning tools",
-    "e-learning platform",
+    "online course platform",
+    "passive income for creators",
+    "white-label platform",
     "AI-powered education",
-    "video search learning",
-    "interactive educational platform",
+    "premium learning platform",
+    "YouTube subscribers monetization",
     "no-cure no-pay",
-    "risk-free learning"
+    "risk-free monetization"
   ],
   structuredData: {
     "@context": "https://schema.org",
@@ -54,7 +54,9 @@ const HomePage = () => {
                 </Container>
                 <NoCureNoPay />
                 <ValueProposition />
+                <VideoFeatures />
                 <Perks />
+                <MoneyMath />
                 <SocialProof />
                 <AppointmentBooking />
                 <FreeDemo />

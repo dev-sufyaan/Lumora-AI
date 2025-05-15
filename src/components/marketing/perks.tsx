@@ -18,12 +18,12 @@ const Perks = () => {
                     transition={{ duration: 0.6 }}
                     className="flex flex-col items-center text-center max-w-2xl mx-auto"
                 >
-                    <SectionBadge title="Platform Features" />
+                    <SectionBadge title="Why It Works" />
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-                        Comprehensive Learning Solutions
+                        How This Benefits You
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        Elevate your educational platform with Lumora AI&apos;s integrated tools designed to enhance student engagement, improve learning outcomes, and streamline administration
+                        Our platform helps you monetize your YouTube audience by providing a premium experience your students will gladly pay for, with zero additional work for you
                     </p>
                 </motion.div>
             </Container>

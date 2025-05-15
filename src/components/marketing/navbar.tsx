@@ -81,7 +81,7 @@ const Navbar = () => {
                                 variant="outline"
                             >
                                 <PhoneIcon className="w-4 h-4 mr-1.5" />
-                                Contact
+                                WhatsApp
                             </Button>
                             
                             <Button
@@ -100,7 +100,7 @@ const Navbar = () => {
                                 variant="default"
                             >
                                 <CalendarIcon className="w-4 h-4 mr-1.5" />
-                                Book Appointment
+                                Schedule a Call
                             </Button>
                             
                             <Button

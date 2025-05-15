@@ -12,6 +12,7 @@ import Hero from "./marketing/hero";
 import Navbar from "./marketing/navbar";
 import Companies from "./marketing/companies";
 import Features from "./marketing/features";
+import VideoFeatures from "./marketing/video-features";
 import Connect from "./marketing/connect";
 import Perks from "./marketing/perks";
 import AppointmentBooking from "./marketing/appointment-booking";
@@ -24,6 +25,7 @@ import SocialProof from "./marketing/social-proof";
 import ValueProposition from "./marketing/value-proposition";
 import FAQ from "./marketing/faq";
 import FreeDemo from "./marketing/free-demo-cta";
+import MoneyMath from "./marketing/money-math";
 
 export {
     Icons,
@@ -35,6 +37,7 @@ export {
     Navbar,
     Companies,
     Features,
+    VideoFeatures,
     Connect,
     Perks,
     AppointmentBooking,
@@ -50,4 +53,5 @@ export {
     ValueProposition,
     FAQ,
     FreeDemo,
+    MoneyMath,
 };

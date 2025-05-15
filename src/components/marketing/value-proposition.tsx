@@ -1,6 +1,6 @@
 "use client";
 
-import { Brain, Clock, LineChart, Target } from "lucide-react";
+import { Brain, Clock, LineChart, Target, Youtube, HelpCircle, BookOpen, FileQuestion } from "lucide-react";
 import { SectionBadge } from "../ui/section-bade";
 import Container from "../global/container";
 import { cn } from "@/functions";
@@ -9,36 +9,36 @@ import NumberTicker from "../ui/number-ticker";
 
 const VALUE_POINTS = [
   {
-    icon: Brain,
-    title: "10X Interactive Learning",
-    description: "Our AI-powered platform transforms passive video watching into active learning experiences that are proven to increase knowledge retention by 10x.",
-    color: "from-blue-500 to-violet-500",
-    metric: "10x",
-    metricLabel: "increase in retention"
-  },
-  {
-    icon: LineChart,
-    title: "Measurable Results",
-    description: "Track learning progress with real-time analytics. Users demonstrate 87% better performance on assessments after using our interactive learning tools.",
-    color: "from-emerald-500 to-teal-500",
-    metric: "87%",
-    metricLabel: "better performance"
-  },
-  {
-    icon: Clock,
-    title: "Time-Efficient Learning",
-    description: "Our search-driven video learning reduces study time by 65% while increasing comprehension through focused, relevant content delivery.",
-    color: "from-amber-500 to-orange-500",
-    metric: "65%",
-    metricLabel: "less study time"
-  },
-  {
-    icon: Target,
-    title: "Outcome-Focused",
-    description: "Designed with clear learning objectives, our platform ensures every minute spent learning directly contributes to your educational goals.",
+    icon: Youtube,
+    title: "Ad-Free Learning Experience",
+    description: "YouTube is full of distractions—especially ads. With the same content, we offer your students a focused, personalized, ad-free learning platform—plus some outstanding perks.",
     color: "from-red-500 to-rose-500",
     metric: "100%",
-    metricLabel: "goal alignment"
+    metricLabel: "distraction-free"
+  },
+  {
+    icon: HelpCircle,
+    title: "24/7 AI Learning Assistant",
+    description: "Students often get stuck watching YouTube courses with no way to ask you directly. Our AI assistant has full knowledge of your content and provides instant clarifications, simpler explanations, and clickable timestamps.",
+    color: "from-blue-500 to-violet-500",
+    metric: "24/7",
+    metricLabel: "instant support"
+  },
+  {
+    icon: FileQuestion,
+    title: "Personalized Practice Quizzes",
+    description: "After each video, students receive AI-powered quizzes that test their understanding recursively until they've grasped the concept. They can't proceed until they truly understand the current lesson.",
+    color: "from-emerald-500 to-teal-500",
+    metric: "100%",
+    metricLabel: "concept mastery"
+  },
+  {
+    icon: BookOpen,
+    title: "Smart Note-Taking",
+    description: "Our platform includes a note-taking section under each video where students can create beautiful, organized notes tied directly to that specific lecture—no more switching apps or maintaining separate notebooks.",
+    color: "from-amber-500 to-orange-500",
+    metric: "All-in-one",
+    metricLabel: "learning environment"
   }
 ];
 
@@ -90,42 +90,6 @@ const ValueProposition = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* ROI Calculator Teaser */}
-        <div className="mt-16 p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-violet-500/5 relative z-0">
-          <div className="text-center mb-6">
-            <h3 className="text-xl md:text-2xl font-medium mb-2">Calculate Your Learning ROI</h3>
-            <p className="text-accent-foreground/70 max-w-2xl mx-auto">
-              See exactly how much time and money you can save by switching to Lumora AI&apos;s interactive learning platform. 
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div className="flex flex-col items-center p-4 rounded-xl bg-background/50 border border-border/40">
-              <h4 className="text-lg font-medium mb-2">Time Savings</h4>
-              <div className="text-3xl font-bold text-primary">
-                <NumberTicker value={120} delay={0} />+
-              </div>
-              <p className="text-sm text-muted-foreground text-center">hours saved per course</p>
-            </div>
-            
-            <div className="flex flex-col items-center p-4 rounded-xl bg-background/50 border border-border/40">
-              <h4 className="text-lg font-medium mb-2">Knowledge Retention</h4>
-              <div className="text-3xl font-bold text-primary">
-                <NumberTicker value={85} delay={0} />%
-              </div>
-              <p className="text-sm text-muted-foreground text-center">higher retention rate</p>
-            </div>
-            
-            <div className="flex flex-col items-center p-4 rounded-xl bg-background/50 border border-border/40">
-              <h4 className="text-lg font-medium mb-2">Cost Efficiency</h4>
-              <div className="text-3xl font-bold text-primary">
-                <NumberTicker value={40} delay={0} />%
-              </div>
-              <p className="text-sm text-muted-foreground text-center">reduced training costs</p>
-            </div>
-          </div>
         </div>
       </Container>
     </div>

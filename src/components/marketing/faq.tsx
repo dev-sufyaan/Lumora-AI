@@ -15,24 +15,24 @@ import { scrollToSection } from "@/functions";
 
 const FAQ_ITEMS = [
   {
-    question: "How does Lumora AI's 24/7 Learning Assistant transform the student experience?",
-    answer: "Lumora AI's intelligent assistant provides content-aware support with deep knowledge of lecture materials, unlike generic chatbots. Students receive contextually relevant answers with timestamp navigation that links directly to relevant moments in video lectures. The system delivers personalized explanations tailored to different learning styles and backgrounds, and is always available to eliminate waiting for instructor responses, maintaining learning momentum throughout the educational journey."
+    question: "How exactly does the monetization process work for my YouTube content?",
+    answer: "We create a white-labeled platform featuring your content from YouTube, enhanced with our AI assistant, interactive quizzes, and smart note-taking features. You promote this premium experience to your audience. Students pay a monthly subscription fee ($3-$5) to access this enhanced learning environment. We only charge $1 per student per month after you reach 100 paying students, making this a truly risk-free partnership where we succeed only when you do."
   },
   {
-    question: "What makes Lumora AI's Integrated Note-Taking System unique?",
-    answer: "Our note-taking system enhances knowledge retention through contextual notes that students can take directly within the lecture interface. All notes are automatically indexed into a searchable repository organized by lecture and topic. The AI suggestion engine identifies key points to note based on content importance, and these notes become a powerful revision tool fully integrated within the learning environment, significantly improving study efficiency."
+    question: "What makes students willing to pay for content they can get for free on YouTube?",
+    answer: "While your content remains available on YouTube, our platform offers significant value-added features that transform passive watching into active learning: 1) An ad-free, distraction-free environment, 2) 24/7 AI assistant that answers questions about your content with direct video timestamps, 3) Interactive quizzes that ensure complete understanding before progressing, and 4) Integrated note-taking that ties directly to video moments. This comprehensive learning experience is what students gladly pay for—especially when they're serious about mastering the material."
   },
   {
-    question: "How does the Adaptive Assessment Engine improve learning outcomes?",
-    answer: "Lumora AI transforms assessment from simple evaluation to a powerful learning tool. Our smart progress gating requires sufficient content engagement (95%) before assessments to ensure proper preparation. The system generates personalized questions based on lecture content and provides reinforcement questions when students answer incorrectly, approaching the same concept from different angles. Topic mastery features identify knowledge gaps and recommend specific content sections for review with direct timestamps, while comprehensive analytics provide detailed performance metrics for self-assessment."
+    question: "How much work do I need to put in to set this up and maintain it?",
+    answer: "Almost none. We handle the entire technical setup, platform maintenance, and customer support. You simply continue creating your content as usual on YouTube. We'll import your videos to your white-labeled platform automatically. Your only responsibility is to promote your premium platform to your audience through your existing channels. We've designed this to be zero additional work for content creators while creating a new revenue stream."
   },
   {
-    question: "What content integration capabilities does Lumora AI offer?",
-    answer: "Lumora AI expands content capabilities while maintaining simplicity through seamless integrations. Our YouTube integration allows instructors to import entire playlists or individual videos with one click, automatically organizing content into course modules with AI-enhanced navigation and searchable transcripts. For Google Drive integration, we support not just documents and presentations, but also direct video imports from Drive storage, preserving all metadata and permissions while adding our AI enhancement layer. Our direct video upload system accepts multiple formats (MP4, MOV, AVI, etc.) with automatic transcoding, thumbnail generation, and chapter creation based on content analysis. All integrated content receives the full suite of Lumora AI enhancements including timestamp navigation, contextual Q&A, engagement analytics, and personalized learning paths—regardless of the content source, ensuring a consistent, high-quality learning experience across all materials."
+    question: "What kind of YouTube channels work best with this model?",
+    answer: "This model works exceptionally well for educational content creators teaching specific skills or knowledge: programming/coding tutorials, academic subjects (math, science, languages), professional skills (design, marketing, finance), creative skills (art, music, writing), and technical training. The more structured and in-depth your content, the more students benefit from our interactive features. If your content helps people learn valuable skills, our platform can help you monetize it effectively."
   },
   {
-    question: "What analytics and instructor tools does Lumora AI provide?",
-    answer: "Lumora AI empowers instructors with comprehensive analytics dashboards that transform data into actionable insights. These include detailed student engagement metrics, AI-powered early warning systems to identify at-risk students, content effectiveness analysis, and revenue tracking for paid courses. Instructors also benefit from automated content enhancement features like quiz generation, content recommendations, transcript generation, and course structure optimization based on learning patterns. Our targeted student support tools enable personalized interventions, custom learning paths, and effective communication tools with engagement tracking."
+    question: "How quickly can I expect to see results and revenue?",
+    answer: "After we set up your white-labeled platform (typically within 1-2 weeks), you can start promoting it to your audience. With consistent promotion to your existing YouTube subscribers, most creators see their first 100 paying students within 30-60 days. Reaching the 100-student threshold (where our fee begins) typically happens within 3-6 months for channels with 50,000+ subscribers. Remember, you'll be earning $3-$5 per student per month from day one, while our fee only begins after you reach 100 students."
   }
 ];
 
@@ -56,7 +56,7 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-            Everything institutions and content creators need to know about our Lumora AI platform and integration process.
+            Everything creators need to know about monetizing their YouTube content with our risk-free platform.
           </p>
         </div>
 
@@ -74,16 +74,16 @@ const FAQ = () => {
         </div>
 
         <div className="mt-16 max-w-3xl mx-auto text-center">
-          <h3 className="text-xl font-medium mb-4">Still have questions?</h3>
+          <h3 className="text-xl font-medium mb-4">Ready to monetize your content?</h3>
           <p className="text-muted-foreground mb-6">
-            Our team is ready to help you understand how Lumora AI can transform your institution&apos;s online learning experience.
+            Let's discuss how we can help you generate $3,000-$5,000/month from your YouTube audience with zero effort.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button onClick={handleContactSupport} variant="outline">
               Contact Support
             </Button>
             <Button onClick={handleTryRiskFree}>
-              Book a Demo
+              Schedule a Call
               <ArrowRightIcon className="ml-2 w-4 h-4" />
             </Button>
           </div>
