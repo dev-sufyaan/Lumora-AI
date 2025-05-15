@@ -76,7 +76,7 @@ const FAQ = () => {
         <div className="mt-16 max-w-3xl mx-auto text-center">
           <h3 className="text-xl font-medium mb-4">Ready to monetize your content?</h3>
           <p className="text-muted-foreground mb-6">
-            Let's discuss how we can help you generate $3,000-$5,000/month from your YouTube audience with zero effort.
+            Let&apos;s discuss how we can help you generate $3,000-$5,000/month from your YouTube audience with zero effort.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button onClick={handleContactSupport} variant="outline">

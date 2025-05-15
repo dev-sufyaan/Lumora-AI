@@ -16,7 +16,7 @@ const MoneyMath = () => {
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <SectionBadge title="The Money Math" />
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-            Here's a quick <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">money math</span> for you
+            Here&apos;s a quick <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">money math</span> for you
           </h2>
           
           <div className="mt-12 w-full max-w-2xl mx-auto p-8 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-violet-500/5">

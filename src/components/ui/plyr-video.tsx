@@ -126,7 +126,7 @@ const PlyrVideo = ({ src, poster, options, className, onReady }: PlyrVideoProps)
         }
       }
     };
-  }, [options, onReady, isTouch, isMobile, isClient]);
+  }, [options, onReady, isTouch, isMobile, isClient, isMuted]);
 
   // Fallback for server-side rendering
   if (!isClient) {

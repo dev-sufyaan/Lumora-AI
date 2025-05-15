@@ -147,7 +147,7 @@ const MobileMenu = ({ isOpen, setIsOpen, handleClose }: Props) => {
                     >
                         <div className="flex items-center w-full text-start">
                             <CalendarClock className="w-4 h-4 mr-2" />
-                            Let's Talk
+                            Let&apos;s Talk
                         </div>
                     </li>
                     <li

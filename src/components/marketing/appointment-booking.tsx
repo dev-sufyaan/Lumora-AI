@@ -225,7 +225,7 @@ const AppointmentBooking = () => {
         <motion.div variants={FADE_IN_VARIANTS} className="flex flex-col items-center text-center">
           <SectionBadge title="Let's Talk" />
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium mt-6">
-            Let's talk so we can both win
+            Let&apos;s talk so we can both win
           </h2>
           <p className="text-accent-foreground/60 max-w-md mx-auto mt-4">
             Book a free call to see how our risk-free platform can help you generate $3,000-$5,000/month with zero effort from your end.

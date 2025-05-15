@@ -22,7 +22,7 @@ const NoCureNoPay = () => {
                         <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">No-Cure No-Pay</span> Risk-Free Model
                     </h2>
                     <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-                        We're so confident in our platform's ability to help you monetize your YouTube content that we've adopted a revolutionary risk-free model. You only pay when you start making money from your audience.
+                        We&apos;re so confident in our platform&apos;s ability to help you monetize your YouTube content that we&apos;ve adopted a revolutionary risk-free model. You only pay when you start making money from your audience.
                     </p>
                 </div>
 

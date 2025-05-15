@@ -35,7 +35,7 @@ const FreeDemo = () => {
               </h2>
               
               <p className="text-accent-foreground/80 mb-6 max-w-xl">
-                As we promised a completely risk-free guarantee, we've priced our service based on your success. We only charge $1 per student per month—after you hit your first 100 students.
+                As we promised a completely risk-free guarantee, we&apos;ve priced our service based on your success. We only charge $1 per student per month—after you hit your first 100 students.
               </p>
               
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
@@ -81,7 +81,7 @@ const FreeDemo = () => {
               </div>
               
               <p className="text-xs text-center text-muted-foreground">
-                Let's talk so we can both win. It's free.
+                Let&apos;s talk so we can both win. It&apos;s free.
               </p>
             </div>
           </div>
